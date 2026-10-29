@@ -43,6 +43,8 @@ El profesional en Ingeniería Informática posee un criterio técnico-científic
 Canales oficiales de la Carrera de Ingeniería de Sistemas e Ingeniería Informática (FNI – UTO). No se incluyen canales de grupos o centros de estudiantes.
 
 - **Sitio web:** [www.sisinf.fni.uto.edu.bo](https://www.sisinf.fni.uto.edu.bo/)
+- **Facebook:** [Ingeniería de Sistemas e Ingeniería Informática (@FNI.SisInf)](https://www.facebook.com/FNI.SisInf/)
+- **Correo electrónico:** la carrera no publica un correo general de contacto; el pie de página del [sitio oficial](https://www.sisinf.fni.uto.edu.bo/) solo enlaza los correos de Soporte y Data Center, y la página de Facebook no muestra ninguno (consultado el 28 de octubre de 2026).
 - **Teléfono:** +591 2 5276366
 - **Ubicación:** Ciudadela Universitaria, Facultad Nacional de Ingeniería, Oruro, Bolivia
 
