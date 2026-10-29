@@ -13,7 +13,7 @@
 <!-- /seccion:encabezado -->
 
 <!-- seccion:idioma -->
-[🇪🇸 Español](https://github.com/sis-inf) · **🇬🇧 English**
+<p align="right"><a href="https://github.com/sis-inf">🇪🇸 Español</a> · <b>🇬🇧 English</b></p>
 <!-- /seccion:idioma -->
 
 <!-- seccion:cifras -->
