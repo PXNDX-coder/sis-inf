@@ -1,4 +1,4 @@
-# Guía de contribución
+# Cómo contribuir al perfil de SIS-INF
 
 ## Cómo previsualizar el README
 
