@@ -64,6 +64,20 @@ def test_lista_vacia(idioma, mensaje):
     assert generar([], idioma) == mensaje
 
 
+def test_porcentaje_muy_pequeño():
+    """Comprueba el formateo y renderizado de porcentajes inferiores al 0.1 %."""
+    porcentajes = [
+        ("Python", 99.99),
+        ("TinyLang", 0.01),
+    ]
+
+    resultado = generar(porcentajes, "es")
+
+    assert isinstance(resultado, str)
+    assert "TinyLang" in resultado
+    assert "0.01" in resultado
+
+
 def test_sin_llamadas_de_red(monkeypatch):
     """Impide conexiones de red durante la generación."""
     def bloquear(*args, **kwargs):
@@ -75,4 +89,3 @@ def test_sin_llamadas_de_red(monkeypatch):
     resultado = generar([("Python", 100.0)], "es")
 
     assert "https://img.shields.io/badge/" in resultado
-    
