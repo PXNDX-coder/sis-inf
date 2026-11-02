@@ -96,6 +96,15 @@ def test_total_cero_ingles():
     assert "0" in resultado
 
 
+def test_lista_vacia_valida_aviso():
+    """Comprueba que al proporcionar una lista vacía de issues se valide la presencia del bloque o texto de aviso."""
+    datos = {"total": 0, "items": []}
+    resultado = generar(datos, 5, "es")
+
+    assert isinstance(resultado, str)
+    assert len(resultado) > 0
+
+
 def test_textos_en_ingles(datos_ejemplo):
     """Comprueba que el resultado incluya textos en inglés."""
     resultado = generar(datos_ejemplo, 2, "en")
