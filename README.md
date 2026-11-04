@@ -17,7 +17,19 @@
 <!-- /seccion:cifras -->
 
 <!-- seccion:carrera -->
+
 ## 🎓 Sobre la carrera
+
+La Carrera de Ingeniería de Sistemas e Informática de la Facultad Nacional de Ingeniería de la Universidad Técnica de Oruro comenzó a funcionar en 1984, impulsada por profesionales vinculados a las ciencias de la computación.
+
+Sus actividades académicas se iniciaron como Carrera de Informática mediante la Resolución del Honorable Consejo Universitario 108/84, del 24 de julio de 1984.
+
+En 1987, su orientación fue reestructurada hacia Ingeniería de Sistemas debido a las necesidades del medio. La Carrera de Ingeniería de Sistemas fue creada formalmente el 16 de junio de 1988 mediante la Resolución 043/88.
+
+Posteriormente, el 1 de septiembre de 1997, se consolidó nuevamente la Carrera de Ingeniería Informática mediante la Resolución 059/97.
+
+*Fuente:* [Investigación sobre la carrera](https://github.com/sis-inf/sis-inf/blob/dev/docs/investigacion-carrera.md)
+
 <!-- /seccion:carrera -->
 
 <!-- seccion:carreras -->
@@ -26,6 +38,13 @@
 
 <!-- seccion:proyectos -->
 ## 🚀 Proyectos
+
+Todos los proyectos son software libre institucional con licencia MIT, desarrollados por docentes y estudiantes de la carrera, por lo que cualquier persona puede usarlos, estudiarlos y mejorarlos.
+
+La lista de proyectos se actualiza automáticamente.
+
+<!-- auto:proyectos -->
+<!-- /auto:proyectos -->
 <!-- /seccion:proyectos -->
 
 <!-- seccion:lenguajes -->
@@ -49,19 +68,3 @@
 
 <p align="center">Software libre institucional · Hecho con 💙 por docentes y estudiantes de Ingeniería de Sistemas e Ingeniería Informática – FNI – UTO · <a href="https://github.com/sis-inf/sis-inf/blob/main/LICENSE">Licencia</a></p>
 <!-- /seccion:pie -->
-
-<!-- INICIO: carrera -->
-
-## 🎓 Sobre la carrera
-
-La Carrera de Ingeniería de Sistemas e Informática de la Facultad Nacional de Ingeniería de la Universidad Técnica de Oruro comenzó a funcionar en 1984, impulsada por profesionales vinculados a las ciencias de la computación.
-
-Sus actividades académicas se iniciaron como Carrera de Informática mediante la Resolución del Honorable Consejo Universitario 108/84, del 24 de julio de 1984.
-
-En 1987, su orientación fue reestructurada hacia Ingeniería de Sistemas, proceso consolidado mediante la Resolución 43/88 del 16 de junio de 1988.
-
-Posteriormente, el 1 de septiembre de 1997, se consolidó nuevamente la Carrera de Ingeniería Informática mediante la Resolución 059/97.
-
-*Fuente:* [Investigación sobre la carrera](https://github.com/sis-inf/sis-inf/blob/dev/docs/investigacion-carrera.md)
-
-<!-- FIN: carrera -->

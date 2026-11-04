@@ -1,7 +1,19 @@
 <!-- seccion:encabezado -->
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sis-inf/sis-inf/dev/assets/banner-oscuro.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/sis-inf/sis-inf/dev/assets/banner-claro.svg">
+  <img alt="sis-inf banner" src="https://raw.githubusercontent.com/sis-inf/sis-inf/dev/assets/banner-claro.svg" width="100%">
+</picture>
+
+**English** | [Español](https://github.com/sis-inf/sis-inf/blob/main/README.md)
+
+</div>
 <!-- /seccion:encabezado -->
 
 <!-- seccion:idioma -->
+<p align="right"><a href="https://github.com/sis-inf">🇪🇸 Español</a> · <b>🇬🇧 English</b></p>
 <!-- /seccion:idioma -->
 
 <!-- seccion:cifras -->
@@ -15,12 +27,15 @@
 <!-- seccion:carrera -->
 ## 🎓 About us
 
-The Systems and Computer Engineering program at the National Faculty of Engineering of the Technical University of Oruro began operating in 1984, driven by professionals linked to computer science. It started as a Computer Science program under University Council Resolution 108/84 of July 24, 1984, with a curriculum oriented toward Computer Engineering. Systems Engineering was formally created on June 16, 1988, under Resolution 043/88. Computer Engineering was consolidated again on September 1, 1997, under Resolution 059/97.
+The Systems and Computer Engineering program at the National Faculty of Engineering of the Technical University of Oruro began operating in 1984, driven by professionals linked to computer science. It started as a Computer Science program under University Council Resolution 108/84 of July 24, 1984, with a curriculum oriented toward Computer Engineering. In 1987, its orientation was restructured toward Systems Engineering to meet local needs, and Systems Engineering was formally created on June 16, 1988, under Resolution 043/88. Computer Engineering was consolidated again on September 1, 1997, under Resolution 059/97.
 
 *Milestones*
 
+- **1987:** The orientation was restructured toward Systems Engineering.
 - **1988:** Systems Engineering was formally created (Resolution 043/88).
 - **1997:** Computer Engineering was consolidated again (Resolution 059/97).
+
+*Source:* [Research on the program](https://github.com/sis-inf/sis-inf/blob/dev/docs/investigacion-carrera.md)
 <!-- /seccion:carrera -->
 
 <!-- seccion:carreras -->
@@ -70,6 +85,12 @@ All our projects are institutional free software released under the MIT license,
 <!-- /seccion:proyectos -->
 
 <!-- seccion:lenguajes -->
+## 💻 Languages
+
+The percentages below show the distribution of code by programming language across all public projects.
+
+<!-- auto:lenguajes -->
+<!-- /auto:lenguajes -->
 <!-- /seccion:lenguajes -->
 
 <!-- seccion:colaboradores -->
