@@ -1,10 +1,19 @@
+
 """Consultas GraphQL y REST a la API de GitHub para las secciones del perfil.
 
 Obtiene aportes (PRs y commits), lenguajes de repositorios y primeras issues.
 """
 
-from typing import Any, Dict, List, Optional, Tuple
+import logging
+from typing import Any, Callable, Dict, List, Optional, Tuple
 from urllib.parse import urlencode
+
+import requests
+
+logger = logging.getLogger(__name__)
+
+MAX_INTENTOS = 2
+
 
 QUERY_PRS = """
 query($owner: String!, $name: String!, $cursor: String) {
@@ -40,13 +49,42 @@ query($owner: String!, $name: String!, $cursor: String) {
 """
 
 
-def _rest(cliente: Any, endpoint: str) -> Any:
-    """Ejecuta una consulta REST (GET) con el cliente.
+def _con_reintentos(consulta: Callable[[], Any], descripcion: str) -> Any:
+    """Ejecuta una consulta y reintenta cuando ocurre un Timeout."""
+    for intento in range(1, MAX_INTENTOS + 1):
+        try:
+            return consulta()
+        except requests.exceptions.Timeout:
+            if intento < MAX_INTENTOS:
+                logger.warning(
+                    "Timeout en %s. Reintentando (%s/%s).",
+                    descripcion,
+                    intento,
+                    MAX_INTENTOS - 1,
+                )
+            else:
+                logger.error(
+                    "Timeout en %s después de %s intentos.",
+                    descripcion,
+                    MAX_INTENTOS,
+                )
+    return None
 
-    Si el cliente expone otro nombre de método para REST, solo hay que
-    cambiarlo aquí.
-    """
-    return cliente.rest(endpoint)
+
+def _rest(cliente: Any, endpoint: str) -> Any:
+    """Ejecuta una consulta REST (GET) con el cliente."""
+    return _con_reintentos(
+        lambda: cliente.rest(endpoint),
+        f"consulta REST {endpoint}",
+    )
+
+
+def _graphql(cliente: Any, consulta: str, variables: Dict[str, Any]) -> Any:
+    """Ejecuta una consulta GraphQL con el cliente."""
+    return _con_reintentos(
+        lambda: cliente.graphql(consulta, variables),
+        "consulta GraphQL",
+    )
 
 
 def _repositorio(respuesta: Any) -> Optional[Dict[str, Any]]:
@@ -71,7 +109,7 @@ def _prs_fusionados(
     cursor = None
     while True:
         variables = {"owner": owner, "name": name, "cursor": cursor}
-        respuesta = cliente.graphql(QUERY_PRS, variables)
+        respuesta = _graphql(cliente, QUERY_PRS, variables)
         conexion = (_repositorio(respuesta) or {}).get("pullRequests")
         if not conexion:
             break
@@ -101,7 +139,7 @@ def _commits_directos(
     cursor = None
     while True:
         variables = {"owner": owner, "name": name, "cursor": cursor}
-        respuesta = cliente.graphql(QUERY_COMMITS, variables)
+        respuesta = _graphql(cliente, QUERY_COMMITS, variables)
         rama = (_repositorio(respuesta) or {}).get("defaultBranchRef") or {}
         historial = (rama.get("target") or {}).get("history")
         if not historial:
@@ -146,7 +184,7 @@ def obtener_aportes(
         prs = [{'repo', 'autor'}] (autor nulo se vuelve 'ghost') y
         commits = [{'repo', 'autor', 'sha'}].
     """
-    del usuario  # Requerido por el contrato; no interviene en las consultas.
+    del usuario
     prs: List[Dict[str, Any]] = []
     commits: List[Dict[str, Any]] = []
 
@@ -175,7 +213,7 @@ def obtener_lenguajes(
     Returns:
         Dict[str, Dict[str, int]]: {repo: {lenguaje: bytes}}.
     """
-    del usuario  # Requerido por el contrato; no interviene en las consultas.
+    del usuario
     resultado: Dict[str, Dict[str, int]] = {}
 
     for repo in nombres_repos:
